@@ -7,10 +7,10 @@ import 'package:wamda/main.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('registry has 14 games with unique ids', () {
-    expect(allGames.length, 14);
-    expect(allGames.map((g) => g.id).toSet().length, 14);
-    expect(gameBuilders.length, 14);
+  test('registry has 48 games with unique ids', () {
+    expect(allGames.length, 48);
+    expect(allGames.map((g) => g.id).toSet().length, 48);
+    expect(gameBuilders.length, 48);
   });
 
   test('storage recordResult updates best score and XP', () async {

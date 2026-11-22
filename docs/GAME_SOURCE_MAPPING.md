@@ -400,3 +400,79 @@ Concepts 1-100 belong to the companion app `brain-games-memory` (not in this rep
 - Partially replicated: Dual N-Back (single-stream only).
 - Original additional games: 0.
 - Not implemented: all remaining catalogue entries, queued in batches (see docs/ROADMAP.md). NIMIQ arcade/action titles and FreeFocusGames Pomodoro tool are out of scope.
+## Batch A — Original implementations of classic mechanics (2026-11-22)
+
+The following games were written from scratch for Wamda. They implement generic, classic cognitive-training paradigms only; no code, content, names, or art were taken from any proprietary app.
+
+| Game | File | Category | Mechanic |
+|---|---|---|---|
+| الخطوات السريعة (Speed Steps) | `lib/games/speed_steps.dart` | Speed | Follow an arrow sequence mentally on a 5×5 grid and tap the final cell |
+| المقارنة السريعة (Quick Compare) | `lib/games/quick_compare.dart` | Speed | Pick the larger of two numbers / dot groups under time pressure |
+| الأشكال المطابقة (Matching Shapes) | `lib/games/matching_shapes.dart` | Focus | Tap every cell matching a target shape+color |
+| الأقراص الملونة (Colored Discs) | `lib/games/colored_discs.dart` | Speed | Tap all discs of an announced color before the round timer ends |
+| ترتيب الأشكال (Shape Sort) | `lib/games/shape_sort.dart` | Speed | Sort appearing shapes into the correct bin quickly |
+| الشكل المختلف (Odd One Out) | `lib/games/odd_one_out.dart` | Focus | Find the single different shape/color/rotation in a grid |
+| المربعات المتطابقة (Matching Squares) | `lib/games/matching_squares.dart` | Focus | Find the only identical pair among patterned squares |
+| الشكل المفقود (Missing Shape) | `lib/games/missing_shape.dart` | Focus | Complete a shape pattern (repetition, size, color, rotation) |
+
+Source: Classic paradigm (original implementation) — License: Original.
+
+## Batch B — Original implementations of classic mechanics (2026-11-22)
+
+The following games were written from scratch for Wamda. They implement generic, classic cognitive-training paradigms only; no code, content, names, or art were taken from any proprietary app.
+
+| Game | File | Category | Mechanic |
+|---|---|---|---|
+| تقسيم اللوحة (Board Split) | `lib/games/board_split.dart` | Problem | Paint a grid into equal-area connected color regions (BFS-verified) |
+| توصيل النقاط (Connect Dots) | `lib/games/connect_dots.dart` | Problem | Flow-style: connect colored dot pairs with non-crossing paths; puzzles generated from solution paths |
+| مكعبات السودوكو (Sudoku Cubes) | `lib/games/sudoku_cubes.dart` | Problem | 4×4 color Sudoku with unique-solution generation (backtracking counter) |
+| تحديد المسار (Path Finder) | `lib/games/path_finder.dart` | Problem | Trace a path through a randomized-DFS maze; scored vs BFS shortest |
+| اللغز السداسي (Hex Puzzle) | `lib/games/hex_puzzle.dart` | Problem | Reproduce a colored hexagon pattern by tapping to cycle colors |
+| لوحة الرموز (Symbol Board) | `lib/games/symbol_board.dart` | Problem | Assign each symbol its legend color on a 3×3 board; legend reshuffles per round |
+| لغز المكعبات (Cube Puzzle) | `lib/games/cube_puzzle.dart` | Problem | From a cube net, pick the color opposite a marked face |
+| تدافع الكرات (Ball Rush) | `lib/games/ball_rush.dart` | Problem | Tap falling balls of the target color in 4 lanes; speed grows over 60s |
+| اتجاه المكعب (Cube Direction) | `lib/games/cube_direction.dart` | Flexibility | Track a cube through a rotation sequence and predict the asked face |
+| دوران الأشكال (Shape Rotation) | `lib/games/shape_rotation.dart` | Flexibility | Mental rotation: pick the identical polyomino among mirrored/other distractors |
+| التبديل الذهني (Mental Switch) | `lib/games/mental_switch.dart` | Flexibility | Task-switching: judge stimuli by color/shape/number parity as the rule cue switches |
+
+Source: Classic paradigm (original implementation) — License: Original.
+
+## Batch C — Original implementations of classic mechanics (2026-11-22)
+
+The following games were written from scratch for Wamda. They implement generic, classic cognitive-training paradigms only; no code, content, names, or art were taken from any proprietary app.
+
+| Game | File | Category | Mechanic |
+|---|---|---|---|
+| نجوم السماء (Sky Stars) | `lib/games/sky_stars.dart` | Memory | Stars flash at random positions on a dark board; tap where each was (tolerance + precision scoring), 3→8 stars, shrinking exposure, 8 rounds |
+| تشابه الأشخاص (People Similarity) | `lib/games/people_similarity.dart` | Memory | Study N drawn faces (skin/hair/glasses/smile features), judge whether a probe face was in the group; distractors differ by one feature, 10 rounds |
+| طريق الخطر (Danger Path) | `lib/games/danger_path.dart` | Memory | A safe path (random walk top→bottom) shows for 3s, then step cell-by-cell to the goal; danger cells cost one of 3 lives, 6 rounds |
+| المسار العكسي (Reverse Path) | `lib/games/reverse_path.dart` | Memory | Corsi-style: a token lights cells in sequence; tap them back in REVERSE order, length 4→9, 8 rounds |
+| حقيبة السفر (Travel Bag) | `lib/games/travel_bag.dart` | Memory | Study packed items (icon chips), then select exactly those from the full set; 4→8 items, 8 rounds |
+| قائمة المأكولات (Food List) | `lib/games/food_list.dart` | Memory | Study a shopping list of Arabic foods, then pick them from a larger shelf grid; 4→8 items, 8 rounds |
+| التشابه الجزئي (Partial Similarity) | `lib/games/partial_similarity.dart` | Focus | Two colored-cell patterns: tap the single differing cell, or declare them identical; grids grow 3×3→5×5, 12 rounds |
+| تقدير المجموع (Sum Estimate) | `lib/games/sum_estimate.dart` | Math | Two dot clouds shown for 1.5s; estimate which had more (subitizing/estimation); quantities grow, differences shrink, 12 rounds |
+| تحدي الأرقام (Number Challenge) | `lib/games/number_challenge.dart` | Math | Find the missing term in a sequence (+n, ×n, alternating ops, squares, Fibonacci-like, growing steps); 4 options, 12 rounds |
+
+Source: Classic paradigm (original implementation) — License: Original.
+
+## Batch D — Language games, original Arabic content (2026-11-22)
+
+The following games were written from scratch for Wamda. All Arabic
+language content (word bank, definitions, synonym pairs, sentences) was
+authored originally for this app from general knowledge; no words,
+definitions, or sentences were copied from any app or book. Shared
+content and generation helpers live in `lib/games/shared/arabic_words.dart`
+(~390-word bank across 9 categories, 46 definition items, 48 synonym
+pairs, 32 sentence-summary items, plus word-search and Boggle grid
+generators).
+
+| Game | File | Category | Mechanic |
+|---|---|---|---|
+| تكوين الكلمات (Word Builder) | `lib/games/word_builder.dart` | Language | Tap letter tiles from a seed word to build valid bank words; length-based scoring, duplicates rejected, 90s |
+| لوحة الكلمات (Word Board) | `lib/games/word_board.dart` | Language | Boggle-style 4×4 Arabic letter grid (5 words placed along adjacent paths); tap adjacent letters incl. diagonals to form words, 90s |
+| تعريف الكلمة (Word Definition) | `lib/games/word_definition.dart` | Language | Read a definition, pick the correct word from 4 options; 12 rounds, 15s each, speed bonus |
+| اختصر الجملة (Sentence Summary) | `lib/games/sentence_summary.dart` | Language | Pick the option that best summarizes a sentence in fewer words (distractors change meaning or ramble); 10 rounds |
+| المترادفات (Synonyms) | `lib/games/synonyms.dart` | Language | Pick the synonym of the shown word from 4 options (antonyms used as distractors); 12 rounds, 15s each, speed bonus |
+| الكلمات الضائعة (Lost Words) | `lib/games/lost_words.dart` | Language | Word search: tap first and last letter of hidden words in a growing 8×8→10×10 grid; found words highlighted and crossed off, 5 rounds |
+
+Source: Classic paradigm (original implementation) — License: Original.
