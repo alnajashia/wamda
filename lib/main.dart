@@ -65,7 +65,10 @@ class _SplashState extends State<SplashScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            CustomPaint(size: const Size(120, 120), painter: _LogoPainter()),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(28),
+              child: Image.asset('assets/logo.png', width: 120, height: 120),
+            ),
             const SizedBox(height: 20),
             const Text(
               'ومضة',
@@ -88,31 +91,6 @@ class _SplashState extends State<SplashScreen> {
       ),
     );
   }
-}
-
-class _LogoPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final circle = Paint()..color = WamdaColors.teal;
-    canvas.drawCircle(
-      Offset(size.width / 2, size.height / 2),
-      size.width / 2,
-      circle,
-    );
-    final bolt = Paint()..color = WamdaColors.amber;
-    final path = Path()
-      ..moveTo(size.width * 0.56, size.height * 0.14)
-      ..lineTo(size.width * 0.34, size.height * 0.54)
-      ..lineTo(size.width * 0.48, size.height * 0.54)
-      ..lineTo(size.width * 0.42, size.height * 0.86)
-      ..lineTo(size.width * 0.68, size.height * 0.44)
-      ..lineTo(size.width * 0.52, size.height * 0.44)
-      ..close();
-    canvas.drawPath(path, bolt);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class MainShell extends StatefulWidget {
